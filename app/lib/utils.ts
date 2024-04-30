@@ -1,5 +1,6 @@
-import { Revenue } from './definitions';
+import { Revenue } from "./definitions";
 
+// *** formatCurrency
 export const formatCurrency = (amount: number) => {
   return (amount / 100).toLocaleString('en-US', {
     style: 'currency',
@@ -7,6 +8,7 @@ export const formatCurrency = (amount: number) => {
   });
 };
 
+// *** formatDateToLocal
 export const formatDateToLocal = (
   dateStr: string,
   locale: string = 'en-US',
@@ -21,6 +23,7 @@ export const formatDateToLocal = (
   return formatter.format(date);
 };
 
+// *** generateYAxis
 export const generateYAxis = (revenue: Revenue[]) => {
   // Calculate what labels we need to display on the y-axis
   // based on highest record and in 1000s
@@ -35,6 +38,7 @@ export const generateYAxis = (revenue: Revenue[]) => {
   return { yAxisLabels, topLabel };
 };
 
+// *** generatePagination
 export const generatePagination = (currentPage: number, totalPages: number) => {
   // If the total number of pages is 7 or less,
   // display all pages without any ellipsis.

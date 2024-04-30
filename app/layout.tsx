@@ -1,3 +1,7 @@
+import '@/app/ui/global.css';
+import { inter, lusitana } from './ui/fonts';
+import Head from 'next/head';
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +9,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <Head>
+        <link rel="icon" href="/gfavicon.ico"></link>
+      </Head>      
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
